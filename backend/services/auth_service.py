@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from db.database import get_db
 from db import models
 
-SECRET_KEY = os.getenv("SECRET_KEY", "kelanaai-secret-key-2026")
+SECRET_KEY = os.getenv("SECRET_KEY")`nif not SECRET_KEY:`n    raise RuntimeError("SECRET_KEY environment variable is not set!")
 ALGORITHM  = "HS256"
 TOKEN_EXPIRE_HOURS = 24
 

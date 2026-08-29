@@ -6,10 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://postgres:postgres@localhost:5432/kelanaai"
-)
+DATABASE_URL = os.getenv("DATABASE_URL")`nif not DATABASE_URL:`n    raise RuntimeError("DATABASE_URL environment variable is not set!")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -22,3 +19,4 @@ def get_db():
         yield db
     finally:
         db.close()
+

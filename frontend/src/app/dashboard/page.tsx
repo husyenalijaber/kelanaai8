@@ -7,7 +7,7 @@ import ProtectedRoute from '@/components/ProtectedRoute'
 import TripCard, { Trip } from '@/components/TripCard'
 import Pagination from '@/components/Pagination'
 
-const API      = 'http://localhost:8000'
+const API      = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 const PAGE_SIZE = 6
 
 function StatsBar({ trips }: { trips: Trip[] }) {

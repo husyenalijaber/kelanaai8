@@ -108,7 +108,7 @@ function TripPlannerForm() {
 
     try {
       // Step 1: Create trip
-      const tripRes = await fetch('http://localhost:8000/api/v1/trips', {
+      const tripRes = await fetch(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1/trips', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
